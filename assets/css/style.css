@@ -87,3 +87,36 @@ header {
     justify-content: center;
     align-items: center;
 }
+
+/* Select Answer Prompt and Points System */
+#prompt {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+
+#points-tally {
+    width: 250px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.points-text {
+    font-size: 2.5rem;
+}
+
+.points-total {
+    width: 80px;
+    height: 80px;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
