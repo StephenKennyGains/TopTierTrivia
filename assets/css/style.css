@@ -35,3 +35,55 @@ header {
     color: whitesmoke;
     margin: 25px auto;
 }
+
+/* Questions and Answers */
+#question-container {
+    max-width: 1000px;
+    height: 500px;
+    background-color: black;
+    margin: 0 auto;
+}
+
+#question {
+    color: whitesmoke;
+    font-size: 4rem;
+    padding: 20px;
+    text-align: center;
+}
+
+#start-btn {
+    position: relative;
+    min-width: 300px;
+    height: 150px;
+    background-color: white;
+    color: black;
+    margin: 175px 350px 175px 350px;
+    font-size: 3rem;
+    border-radius: 25px;
+}
+
+#start-btn:hover {
+    background-color: lightblue;
+}
+
+#answer-buttons {
+    width: 1000px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px auto;
+}
+
+#answer-buttons button {
+    width: 200px;
+    height: 75px;
+    background-color: black;
+    border-radius: 25px;
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
