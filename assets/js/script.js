@@ -21,23 +21,24 @@ function startQuiz(){
  */
 
 function moveToNextQuestion(questionNo){
-    if(typeof questions[questionNo] ==='undefined'){
+    if(typeof questions[questionNo] === 'undefined') {
         var finalResult = document.getElementById("finalScore").innerHTML;
-        alert("Congratulations, you have completed the quiz, Your total score is" +finalResult + ". Click OK to restart and try again!")
+        alert("Congratulations, you have completed the quiz, Your total score is" +finalResult + ". Click OK to restart and try again!");
         
     } else {
         document.getElementById("question").innerHTML = questions[questionNo]['question'];
 
-        document.getElementById("answer-choice-0").innerHTML = questions[questionNo]['answers'][0]['text']
-        document.getElementById("answer-choice-1").innerHTML = questions[questionNo]['answers'][1]['text']
-        document.getElementById("answer-choice-2").innerHTML = questions[questionNo]['answers'][2]['text']
-        document.getElementById("answer-choice-3").innerHTML = questions[questionNo]['answers'][3]['text']
+        document.getElementById("answer-choice-0").innerHTML = questions[questionNo]['answers'][0]['text'];
+        document.getElementById("answer-choice-1").innerHTML = questions[questionNo]['answers'][1]['text'];
+        document.getElementById("answer-choice-2").innerHTML = questions[questionNo]['answers'][2]['text'];
+        document.getElementById("answer-choice-3").innerHTML = questions[questionNo]['answers'][3]['text'];
     }
 }
 
 function checkAnswer(selectedAnswer){
-    var currentQuestionNo = document.getElementById("current-question").value;
-    var correctAnswer = question[currentQuestionNo]['answers'][selectedAnswer]['correct']
+    var currentQuestionNo = document.getElementById("currentQuestion").value;
+    var playerSelectedAnswer = document.getElementById("answer-choice-"+selectedAnswer).innerHTML;
+    var correctAnswer = questions[currentQuestionNo]['answers'][selectedAnswer]['correct'];
 
     if (correctAnswer == true) {
         document.getElementById("answer-choice-"+selectedAnswer).style.backgroundColor = "#00FF00";
@@ -47,17 +48,17 @@ function checkAnswer(selectedAnswer){
         document.getElementById("finalScore").innerHTML = Number(getCurrentScore)+Number(5);
         var nextQuestion = Number(document.getElementById("currentQuestion").value)+Number(1);
         document.getElementById("currentQuestion").value = nextQuestion;
-        document.getElementById("answer-choice"+selectedAnswer).style.backgroundColor = "#000000"
+        document.getElementById("answer-choice-"+selectedAnswer).style.backgroundColor = "#000000"
 
         moveToNextQuestion(nextQuestion);
     }, 1000);
 
     } else {
-        document.getElementById("answer-choice"+selectedAnswer).style.backgroundColor = "#ff0000"
+        document.getElementById("answer-choice-"+selectedAnswer).style.backgroundColor = "#ff0000"
         setTimeout(function() {
         var nextQuestion = Number(document.getElementById("currentQuestion").value)+Number(1);
         document.getElementById("currentQuestion").value = nextQuestion;
-        document.getElementById("answer-choice"+selectedAnswer).style.backgroundColor = "#000000"
+        document.getElementById("answer-choice-"+selectedAnswer).style.backgroundColor = "#000000"
         moveToNextQuestion(nextQuestion);
     }, 1000);
     }
