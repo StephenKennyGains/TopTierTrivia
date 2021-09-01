@@ -3,10 +3,10 @@ function startQuiz(){
     document.getElementById("start-btn").style.display= 'none';
     document.getElementById("question").innerHTML = questions[0]['question'];
 
-    document.getElementById("").innerHTML = questions[0]['answers'][0]['text']
-    document.getElementById("").innerHTML = questions[0]['answers'][1]['text']
-    document.getElementById("").innerHTML = questions[0]['answers'][2]['text']
-    document.getElementById("").innerHTML = questions[0]['answers'][3]['text']
+    document.getElementById("answer-choice-0").innerHTML = questions[0]['answers'][0]['text']
+    document.getElementById("answer-choice-1").innerHTML = questions[0]['answers'][1]['text']
+    document.getElementById("answer-choice-2").innerHTML = questions[0]['answers'][2]['text']
+    document.getElementById("answer-choice-3").innerHTML = questions[0]['answers'][3]['text']
 }
 
 // Questions and Answers Array
