@@ -1,3 +1,7 @@
+/** startQuiz Function
+ * This Function will start the quiz by removing the start button from 
+ * the screen and populate the first question and asnwers from the array
+ */
 
 function startQuiz(){
     document.getElementById("start-btn").style.display= 'none';
@@ -7,6 +11,28 @@ function startQuiz(){
     document.getElementById("answer-choice-1").innerHTML = questions[0]['answers'][1]['text']
     document.getElementById("answer-choice-2").innerHTML = questions[0]['answers'][2]['text']
     document.getElementById("answer-choice-3").innerHTML = questions[0]['answers'][3]['text']
+}
+
+/** moveToNextQuestion Function
+ * This function is to check whether there is available questions remaining 
+ * If there are no questions remaining then the quiz will end with an alert
+ * calling for the final score and a message
+ * If there are questions remaining it will call on the next question
+ */
+
+function moveToNextQuestion(questionNo){
+    if(typeof questions[questionNo] ==='undefined'){
+        var finalResult = document.getElementById("finalScore").innerHTML;
+        alert("Congratulations, you have completed the quiz, Your total score is" +finalResult + ". Click OK to restart and try again!")
+        
+    } else {
+        document.getElementById("question").innerHTML = questions[questionNo]['question'];
+
+        document.getElementById("answer-choice-0").innerHTML = questions[questionNo]['answers'][0]['text']
+        document.getElementById("answer-choice-1").innerHTML = questions[questionNo]['answers'][1]['text']
+        document.getElementById("answer-choice-2").innerHTML = questions[questionNo]['answers'][2]['text']
+        document.getElementById("answer-choice-3").innerHTML = questions[questionNo]['answers'][3]['text']
+    }
 }
 
 // Questions and Answers Array
