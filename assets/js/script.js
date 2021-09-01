@@ -35,6 +35,34 @@ function moveToNextQuestion(questionNo){
     }
 }
 
+function checkAnswer(selectedAnswer){
+    var currentQuestionNo = document.getElementById("current-question").value;
+    var correctAnswer = question[currentQuestionNo]['answers'][selectedAnswer]['correct']
+
+    if (correctAnswer == true) {
+        document.getElementById("answer-choice-"+selectedAnswer).style.backgroundColor = "#00FF00";
+        var getCurrentScore = document.getElementById("finalScore").innerHTML;
+
+        setTimeout(function() {
+        document.getElementById("finalScore").innerHTML = Number(getCurrentScore)+Number(5);
+        var nextQuestion = Number(document.getElementById("currentQuestion").value)+Number(1);
+        document.getElementById("currentQuestion").value = nextQuestion;
+        document.getElementById("answer-choice"+selectedAnswer).style.backgroundColor = "#000000"
+
+        moveToNextQuestion(nextQuestion);
+    }, 1000);
+
+    } else {
+        document.getElementById("answer-choice"+selectedAnswer).style.backgroundColor = "#ff0000"
+        setTimeout(function() {
+        var nextQuestion = Number(document.getElementById("currentQuestion").value)+Number(1);
+        document.getElementById("currentQuestion").value = nextQuestion;
+        document.getElementById("answer-choice"+selectedAnswer).style.backgroundColor = "#000000"
+        moveToNextQuestion(nextQuestion);
+    }, 1000);
+    }
+}
+
 // Questions and Answers Array
 var questions = [{
     question: "Which player has the most premier league appearances of all time?",

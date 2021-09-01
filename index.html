@@ -24,15 +24,16 @@
     <main>
         <div id="question-container">
             <div id="question"></div>
+            <input type="hidden" id="currentQuestion" value="0"/>
             <button id="start-btn" onClick="startQuiz()">Start</button>
         </div>
 
     <!--Answer Boxes and Prompt to Select Answer-->
         <div id="answer-buttons">
-            <button class="btn" id="answer-choice-0"></button>
-            <button class="btn" id="answer-choice-1"></button>
-            <button class="btn" id="answer-choice-2"></button>
-            <button class="btn" id="answer-choice-3"></button>
+            <button class="btn" id="answer-choice-0" onClick="checkAnswer(0)"></button>
+            <button class="btn" id="answer-choice-1" onClick="checkAnswer(1)"></button>
+            <button class="btn" id="answer-choice-2" onClick="checkAnswer(2)"></button>
+            <button class="btn" id="answer-choice-3" onClick="checkAnswer(3)"></button>
         </div>
         
         <div id="prompt">
