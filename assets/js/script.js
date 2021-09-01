@@ -35,9 +35,17 @@ function moveToNextQuestion(questionNo){
     }
 }
 
+/** checkAnswer Function
+ * Uses the hidden html element to check the user selected answer
+ * If correct, changes button color to green with a delay before 
+ * changing back to white and calling nextQuestion function
+ * Adds 5 points when correct
+ * If incorrect, changes to red and with a delay before changing
+ * back to white and moving to next question
+ * Adds no points when incorrect
+ */
 function checkAnswer(selectedAnswer){
     var currentQuestionNo = document.getElementById("currentQuestion").value;
-    var playerSelectedAnswer = document.getElementById("answer-choice-"+selectedAnswer).innerHTML;
     var correctAnswer = questions[currentQuestionNo]['answers'][selectedAnswer]['correct'];
 
     if (correctAnswer == true) {
