@@ -23,8 +23,11 @@ function startQuiz(){
 function moveToNextQuestion(questionNo){
     if(typeof questions[questionNo] === 'undefined') {
         var finalResult = document.getElementById("finalScore").innerHTML;
-        alert("Congratulations, you have completed the quiz, Your total score is" +finalResult + ". Click OK to restart and try again!");
+        alert("Congratulations, you have completed the quiz, Your total score is " +finalResult + ". Click OK to restart and try again!");
         
+        window.location.href = window.location.href;
+        return true;
+
     } else {
         document.getElementById("question").innerHTML = questions[questionNo]['question'];
 
