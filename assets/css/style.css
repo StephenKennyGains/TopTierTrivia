@@ -23,7 +23,7 @@ header {
 
 #top-tier-trivia {
     max-width: 800px;
-    height: 150px;
+    max-height: 150px;
     background-color: rgb(255, 30, 0);
     margin: 15px auto;
     border: solid 2px black;
@@ -139,6 +139,7 @@ header {
     #top-tier-trivia {
         align-items: center;
         width: 90vw;
+        max-height: 500px;
     }
 
     #logo {
@@ -148,16 +149,13 @@ header {
     #question {
         font-size: 3rem;
     }
+
 }
 
 @media (max-width: 425px) {
 
     #top-tier-trivia h1 {
         font-size: 3.2rem;
-    }
-
-    #logo {
-        display: none;
     }
 
     #prompt {
@@ -178,7 +176,13 @@ header {
         font-size: 2rem;
     }
 
+    #start-btn {
+        position: relative;
+        min-width: 300px;
+        max-height: 150px;
+    }
+
     #points-tally {
-        margin-top: 50px;
+        margin-top: 80px;
     }
 }
