@@ -5,12 +5,12 @@
 
 function startQuiz(){
     document.getElementById("start-btn").style.display= 'none';
-    document.getElementById("question").innerHTML = questions[0]['question'];
+    document.getElementById("question").innerHTML = questions[0].question;
 
-    document.getElementById("answer-choice-0").innerHTML = questions[0]['answers'][0]['text']
-    document.getElementById("answer-choice-1").innerHTML = questions[0]['answers'][1]['text']
-    document.getElementById("answer-choice-2").innerHTML = questions[0]['answers'][2]['text']
-    document.getElementById("answer-choice-3").innerHTML = questions[0]['answers'][3]['text']
+    document.getElementById("answer-choice-0").innerHTML = questions[0].answers[0].text;
+    document.getElementById("answer-choice-1").innerHTML = questions[0].answers[1].text;
+    document.getElementById("answer-choice-2").innerHTML = questions[0].answers[2].text;
+    document.getElementById("answer-choice-3").innerHTML = questions[0].answers[3].text;
 }
 
 /** moveToNextQuestion Function
@@ -29,12 +29,12 @@ function moveToNextQuestion(questionNo){
         return true;
 
     } else {
-        document.getElementById("question").innerHTML = questions[questionNo]['question'];
+        document.getElementById("question").innerHTML = questions.questionNo.question;
 
-        document.getElementById("answer-choice-0").innerHTML = questions[questionNo]['answers'][0]['text'];
-        document.getElementById("answer-choice-1").innerHTML = questions[questionNo]['answers'][1]['text'];
-        document.getElementById("answer-choice-2").innerHTML = questions[questionNo]['answers'][2]['text'];
-        document.getElementById("answer-choice-3").innerHTML = questions[questionNo]['answers'][3]['text'];
+        document.getElementById("answer-choice-0").innerHTML = questions.questionNo.answers[0].text;
+        document.getElementById("answer-choice-1").innerHTML = questions.questionNo.answers[1].text;
+        document.getElementById("answer-choice-2").innerHTML = questions.questionNo.answers[2].text;
+        document.getElementById("answer-choice-3").innerHTML = questions.questionNo.answers[3].text;
     }
 }
 
@@ -49,7 +49,7 @@ function moveToNextQuestion(questionNo){
  */
 function checkAnswer(selectedAnswer){
     var currentQuestionNo = document.getElementById("currentQuestion").value;
-    var correctAnswer = questions[currentQuestionNo]['answers'][selectedAnswer]['correct'];
+    var correctAnswer = questions[currentQuestionNo].answers[selectedAnswer].correct;
 
     if (correctAnswer == true) {
         document.getElementById("answer-choice-"+selectedAnswer).style.backgroundColor = "#00FF00";
@@ -59,17 +59,17 @@ function checkAnswer(selectedAnswer){
         document.getElementById("finalScore").innerHTML = Number(getCurrentScore)+Number(5);
         var nextQuestion = Number(document.getElementById("currentQuestion").value)+Number(1);
         document.getElementById("currentQuestion").value = nextQuestion;
-        document.getElementById("answer-choice-"+selectedAnswer).style.backgroundColor = "#000000"
+        document.getElementById("answer-choice-"+selectedAnswer).style.backgroundColor = "#000000";
 
         moveToNextQuestion(nextQuestion);
     }, 1000);
 
     } else {
-        document.getElementById("answer-choice-"+selectedAnswer).style.backgroundColor = "#ff0000"
+        document.getElementById("answer-choice-"+selectedAnswer).style.backgroundColor = "#ff0000";
         setTimeout(function() {
         var nextQuestion = Number(document.getElementById("currentQuestion").value)+Number(1);
         document.getElementById("currentQuestion").value = nextQuestion;
-        document.getElementById("answer-choice-"+selectedAnswer).style.backgroundColor = "#000000"
+        document.getElementById("answer-choice-"+selectedAnswer).style.backgroundColor = "#000000";
         moveToNextQuestion(nextQuestion);
     }, 1000);
     }
