@@ -29,12 +29,12 @@ function moveToNextQuestion(questionNo){
         return true;
 
     } else {
-        document.getElementById("question").innerHTML = questions.questionNo.question;
+        document.getElementById("question").innerHTML = questions[questionNo].question;
 
-        document.getElementById("answer-choice-0").innerHTML = questions.questionNo.answers[0].text;
-        document.getElementById("answer-choice-1").innerHTML = questions.questionNo.answers[1].text;
-        document.getElementById("answer-choice-2").innerHTML = questions.questionNo.answers[2].text;
-        document.getElementById("answer-choice-3").innerHTML = questions.questionNo.answers[3].text;
+        document.getElementById("answer-choice-0").innerHTML = questions[questionNo].answers[0].text;
+        document.getElementById("answer-choice-1").innerHTML = questions[questionNo].answers[1].text;
+        document.getElementById("answer-choice-2").innerHTML = questions[questionNo].answers[2].text;
+        document.getElementById("answer-choice-3").innerHTML = questions[questionNo].answers[3].text;
     }
 }
 
