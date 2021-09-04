@@ -1,6 +1,6 @@
 /** startQuiz Function
  * This Function will start the quiz by removing the start button from 
- * the screen and populate the first question and asnwers from the array
+ * the screen and populate the first question and answers from the array
  */
 
 function startQuiz(){

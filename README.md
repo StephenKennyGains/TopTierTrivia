@@ -1,79 +1,97 @@
-# Love Maths
+# Top tier Trivia 
 
-In this section, you will include one or two paragraphs providing an overview of your project. Essentially, this part is your sales pitch. At this stage, you should have a name for your project so use it! Don’t introduce the project as a Portfolio project for the diploma. In this section, describe what the project hopes to accomplish, who it is intended to target and how it will be useful to the target audience. 
+Top Tier Trivia is a simply designed quiz game that runs through a series of questions with increasing difficulty. For football fans, it is an opportunity to show what they know and see who can get the top score.
 
-For example, Love Maths is a site that hopes to demonstrate how pure JavaScript works in a real-world context. The site will be targeted toward people who not only love to implement more advanced JavaScript concepts but also maths. Love Maths is a fully responsive JavaScript maths game that will allow users to add, subtract, multiply and divide numbers. 
+The quiz will give you 5 points for every correct answer and will be used by Fifa Twitch streamer, ZedNG, on his channel to test some of his followers knowledge of the game.
 
-![Responsice Mockup](assets/images/responsive_mockup.png)
+![Responsive Mockup](assets/images/responsive_mockup.png)
 
 ## Features 
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so. You will need to explain what value each of the features provides for the user, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+The quiz is dedigned with simplicity in mind. The layout is kept very minimal and with an aim at keeping the quiz very accessible for both desktop and mobile users. The structure follows a simple multiple choice structure with a question given and four possible answers, only one of which is correct.
+
+## Wireframe
+
+The wireframe for the project was done through Adode XD which made the project a lot easier to implement on the HTML and CSS front as it gives accurate sizes and layout. Although the end result deviated slighlty from the Wireframe, this was a personal choice of how I felt it looked through the various screen sizes.
+
+![Wireframe Desktop](assets/images/wireframe-desktop.png)
+![Wireframe Mobile](assets/images/wireframe-mobile.png)
 
 ### Existing Features
 
-- __The Love Maths Logo and Heading__
+- __Top Tier Trivia Logo and Heading__
 
-  - Featured at the top of the page, the Love Maths logo and heading is easy to see for the user. Upon viewing the page, the user will be able to see the name of the game.
+  - At the top of the page, the logo for streamer ZedNG is featured, alongside the name of the game and page so that users immediately see they have landed at the correct location.
 
-![Logo](media/love_maths_logo.png)
-
-- __The Game Area__
-
-  - This section will allow the user to play the maths game. The user will be able to easily see icons for addition,  subtraction, multiplication, and division games.
-  - The user will be able to select the type of maths game they will be playing by clicking on the different icons. 
-
-![Game](media/love_maths_icons.png)
-
-- __The Question section__
-
-  - The question section is where the user will be able to see the elementary arithmetic question to answer as part of the game. The user will be able answer the questions in the answer box provide
-  - The user will be able to submit their answer and a pop-up will make it known to the user if they answered correctly. 
-
-![Question](media/love_maths_question.png)
+![Logo and Title](assets/images/logo_and_title.png)
 
 - __The Score Area__
 
-  - This section will allow the user to see exactly how many correct and incorrect answers they have provided. 
+  - The score area is show directly below the header and logo to show the user that this is part of the game immediately. It was previously shown at the bottom of the page but being shown at the top, gives the user a clearer idea of the games intentions on first glance. The score will only increase on correct answers and will give 5 points. 
+  - To give it some additional focus I gave it a short text prompt of points- in front of it and a rounded background to highlight it.
 
-![score](media/love_maths_answer.png)
+![Points](assets/images/points_area.png)
 
-For some/all of your features, you may choose to reference the specific project files that implement them.
+- __The Question and Answer section__
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+  - The question area contains a simple start button and blank background to begin with and four blank button options below that.
+  - After pressing start, the start button will be hidden and the first question of the game will populate along with the first four possible answers to that question. 
+
+![Question Start](assets/images/question_area_blank.png)
+![Question Populated](assets/images/question_area_filled.png)
 
 ### Features Left to Implement
 
-- Another feature idea
+- With More time, I would add an option to simply end game instead of restarting and have the score displayed as the users highest score so it could be screen shotted and shared
+- To avoid users being able to simply google questions, with more time for the project, I would add a 10 second timer to each question before moving to the next question.
+- As this will be used by the same user as my first Project, I will add a crossover between my first deployed website and this page or simply intergrate this into the first submitted project.
 
 ## Testing 
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your project’s features and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+- __HTML__
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+- The Html of the page is very simplistic and was completed very quickly after developing the wireframe for the site. 
+- The only complicated section of the HTML was upon implemeting some of the attributes to be linked to the JS file, particularly-
+    - The question area containing the following line <input type="hidden" id="currentQuestion" value="0"/> which allows the js file to identify the current positon of the questions and answers array. I got inspiration for this from the first Youtube video linked in the credits below.
+    - And the <id="answer-choice-0" onClick="checkAnswer(0)"> on the answer buttons so that the answers in the array could be assigned to the individual buttons and have a function when selected. I orignally had an issue with this feature until I had added this to the HTML. I had assumed the JS would automatically assign to the buttons and played with the js file before realising there was nothing present to actually guide the answers to this section.
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+- __CSS__
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+- The CSS went through normal teething issues with responsive design. I made several adjustments to try avoid removing the logo from the header section on mobile.
+- Flex box was used in most sections to give smoother transitions to screen sizes, particulalry in the answer Divs.
+- One issue I encountered which was not resolved was that similarly to the start button, I originally had the answer buttons highlight when they were hovered over, however the JS function which highlights the buttons red or green for correct and incorrect answers would remove this feature but only on buttons which had been selected. Having looked through the function, having the buttons reset to their original state by looping back through the function of moveToNextQuestion instead of simply updating the color back to black, may solve the issue but due to time, this has not been tested yet.
+
+
+- __JavaScript__
+
+- The javascript gave me he most issues and a lot of additional study was needed and has been mentioned in the credits section below.
+- The first step was implementing the start quiz function to have the start button remove from the screen and populate the first questions and answers from the questions array.
+- The first issue encountered was that although I had written the moveToNextFunction as it currently stands (although I had previously written in bracket notation), I had not put in the html elements which allowed the function to actually populate on screen. I reviewed through this several times before realising that it could possibly be correct but had nothing allowing it be displayed. This is when the elements listed int he HTML section above were added which resolved the issue.
+- The second issue was in changing the color of the buttons on selection. Originally I had tried using the technique of having a css class called 'hide' which changed the color of the answer divs but had display-none by default and was then removed in the JS. I got this idea from the first Youtube video linked in the credits below. I found that this seemed to be a more complex way of achieving the same outcome and instead reviewed back through the course content to the section of changing style elements directly in Javascript and found this easier to both understand and implement. Only when seeing the highlight issue mentioned in the CSS section above did I realise that the CSS method of changing the colors may help in allowing the highlighting of the answer buttons but I beleive I will achieve this through editing the JS function.
+-The third issue I ran into was that although you could very briefly see the color change to the buttons, the next question would populate immediately after. To get around this I needed to add the setTimeout delay. Again I reviewed through the course material for this to find more inforamtion. Although I knew what I wanted to do with this I still made a mistake with this because I named the function (delay), forgetting that setTimeout was necessary for the function to work and not a changeable name.
+- The restart function was also missing and only when I completed through each question did I see the issue. I used information I had gotten from the website linked in the credits below to implement this function. The functions to do this that I had seen in other projects and videos, seemed more complicated and relied on a lot of additional code. This method of essentially just refreshing the page was the most basic way I could think of to get my desired outcome without adding unneccessay complication.
+- Another issue which was not related to my code was that my editor was not showing the different colors normally associated (such as a funcction or variable turning blue or pink for example, they would just remain as white text) so on a few cases I had to copy my code from github to VS code which I had already installed on my desktop to have isues highlighted easier.
+- Lastly, I had used bracket notation in a lot of the code which I later updated to dot notation after putting the code through JShint.
 
 
 ### Validator Testing 
 
 - HTML
-    - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-maths%2F)
+    - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fstephenkennygains.github.io%2FTopTierTrivia%2F)
 - CSS
-    - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-maths%252F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+    - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fstephenkennygains.github.io%2FTopTierTrivia%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 - JavaScript
     - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
+      - Warnings found an corrected were some missing ; and the use of bracket notation over dot notation.
       - The following metrics were returned: 
-      - There are 11 functions in this file.
-      - Function with the largest signature takes 2 arguments, while the median is 0.
-      - Largest function has 10 statements in it, while the median is 3.
-      - The most complex function has a cyclomatic complexity value of 4 while the median is 2.
+      - There are 5 functions in this file.
+      - Function with the largest signature takes 1 arguments, while the median is 0.
+      - Largest function has 10 statements in it, while the median is 6.
+      - The most complex function has a cyclomatic complexity value of 2 while the median is 1.
 
 ### Unfixed Bugs
 
-You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. 
+Although there are no current bugs, there are additional features I would like to add which have all been outlined in the information above.
 
 ## Deployment
 
@@ -89,37 +107,16 @@ The live link can be found here - https://code-institute-org.github.io/love-math
 
 ## Credits 
 
-In this section you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-
-You can break the credits section up into Content and Media, depending on what you have included in your project. 
+ [Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k). I got inspiration for some sections of this quiz from this youtube video but felt that some of the code was excessive for the outcome I wanted. Watching the video through though helped me realise my errors in the HTML elements not calling the JS file.
+ [Brian Design](https://www.youtube.com/watch?v=f4fB9Xg2JEY&t=2203s). This video again seemed to have more complication that I felt was necessary but gave me inspiration for additional features that I would like to implement in the future.
+ [Javascript.info](https://javascript.info/) I found this web page hugely helpful. It gave me a better understanding of some of the core elements of my code and also gave me the idea for the restart function in my code. 
+ I had reviewed through some Peer-review submission on slack buthad ran in to the same issue as the videos listed above in that they had some more complexity than I thought necessary. I wanted my code and page to be clean and concise and took more inspiration from the LoveMaths walkthrough than peer submissions.
 
 ### Content 
 
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- The logo on the page is taken from games Streamer and friend, ZedNG
+- Questions and answers were also inspired by ZedNG from his knowledge of football trivia.
 
 ### Media
 
-- The photos used on the home and sign up page are from This Open Source site
-- The images used for the gallery page were taken from this other open source site
-
-
-Congratulations on completing your Readme, you have made another big stride in the direction of being a developer! 
-
-## Other General Project Advice
-
-Below you will find a couple of extra tips that may be helpful when completing your project. Remember that each of these projects will become part of your final portfolio so it’s important to allow enough time to showcase your best work! 
-
-- One of the most basic elements of keeping a healthy commit history is with the commit message. When getting started with your project, read through [this article](https://chris.beams.io/posts/git-commit/) by Chris Beams on How to Write  a Git Commit Message 
-  - Make sure to keep the messages in the imperative mood 
-
-- When naming the files in your project directory, make sure to consider meaningful naming of files, point to specific names and sections of content.
-  - For example, instead of naming an image used ‘image1.png’ consider naming it ‘landing_page_img.png’. This will ensure that there are clear file paths kept. 
-
-- Do some extra research on good and bad coding practices, there are a handful of useful articles to read, consider reviewing the following list when getting started:
-  - [Writing Your Best Code](https://learn.shayhowe.com/html-css/writing-your-best-code/)
-  - [HTML & CSS Coding Best Practices](https://medium.com/@inceptiondj.info/html-css-coding-best-practice-fadb9870a00f)
-  - [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html#General)
-
-Getting started with your Portfolio Projects can be daunting, planning your project can make it a lot easier to tackle, take small steps to reach the final outcome and enjoy the process! 
+- No media has been used in the site and media in this file have been created myself.
