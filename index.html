@@ -19,6 +19,16 @@
             <h1>Top Tier Trivia</h1>
         </div>
     </header>
+
+    <!-- Points Accumulator-->
+    <div id="points-tally">
+        <div class="points-text">
+            <p>Points-</p>
+        </div>
+        <div class="points-total" id="finalScore">
+            0
+        </div>
+    </div>
     
     <!--Question Box-->
     <main>
@@ -30,24 +40,14 @@
 
     <!--Answer Boxes and Prompt to Select Answer-->
         <div id="answer-buttons">
-            <button class="btn" id="answer-choice-0" onClick="checkAnswer(0)"></button>
-            <button class="btn" id="answer-choice-1" onClick="checkAnswer(1)"></button>
-            <button class="btn" id="answer-choice-2" onClick="checkAnswer(2)"></button>
-            <button class="btn" id="answer-choice-3" onClick="checkAnswer(3)"></button>
+            <button aria-label="answer-choice-1" class="btn" id="answer-choice-0" onClick="checkAnswer(0)"></button>
+            <button aria-label="answer-choice-2" class="btn" id="answer-choice-1" onClick="checkAnswer(1)"></button>
+            <button aria-label="answer-choice-3" class="btn" id="answer-choice-2" onClick="checkAnswer(2)"></button>
+            <button aria-label="answer-choice-4" class="btn" id="answer-choice-3" onClick="checkAnswer(3)"></button>
         </div>
         
         <div id="prompt">
             <p>Select ONE of the choices above</p>
-        </div>
-
-    <!-- Points Accumulator-->
-        <div id="points-tally">
-            <div class="points-text">
-                <p>Points-</p>
-            </div>
-            <div class="points-total" id="finalScore">
-                0
-            </div>
         </div>
     </main>
 
