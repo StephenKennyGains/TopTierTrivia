@@ -22,7 +22,7 @@ header {
 
 #logo img {
     max-width: 150px;
-    height: auto;
+    height: 150px;
 }
 
 #top-tier-trivia {
@@ -152,12 +152,12 @@ header {
 
     #logo {
         width: 75px;
-        height: auto;
+        height: 75px;
     }
     
     #logo img {
         max-width: 75px;
-        height: auto;
+        height: 75px;
     }
 
     #prompt {
