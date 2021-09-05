@@ -140,11 +140,7 @@ header {
 
 }
 
-@media (max-width: 425px) {
-
-    header {
-        max-width: 90%;
-    }
+@media (max-width: 600px) {
 
     #top-tier-trivia h1 {
         font-size: 2.5rem;
@@ -158,6 +154,21 @@ header {
     #logo img {
         max-width: 75px;
         height: 75px;
+    }
+
+    #points-tally {
+        margin: 25px auto;
+    }
+}
+
+@media (max-width: 425px) {
+
+    header {
+        max-width: 90%;
+    }
+
+    #points-tally {
+        margin: 0 auto;
     }
 
     #prompt {

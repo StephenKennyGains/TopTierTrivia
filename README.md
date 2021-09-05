@@ -6,16 +6,51 @@ The quiz will give you 5 points for every correct answer and will be used by Fif
 
 ![Responsive Mockup](assets/images/responsive_mockup.png)
 
-## Features 
+## [View live website in github pages](https://stephenkennygains.github.io/TopTierTrivia/)
+---
 
-The quiz is designed with simplicity in mind. The layout is kept very minimal and with an aim at keeping the quiz very accessible for both desktop and mobile users. The structure follows a simple multiple choice structure with a question given and four possible answers, only one of which is correct.
+## Table of contents
 
-## Wireframe
+- [UX](#ux)
+    - [Site goals](#site-goals)
+    - [User goals](#user-goals)
+    - [Wireframes](#wireframes)
+- [Features](#features)
+    - [Existing Features](#existing-features)
+    - [Features Left To Imlement](#features-left-to-implement)
+- [Testing](#testing)
+    - [HTML](#HTML)
+    - [CSS](#CSS)
+    - [JavaScript](#JavaScript)
+- [Code Validation](#validator-testing)
+- [Unfixed Bugs](#unfixed-bugs)
+- [Performance testing](#performance-testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
+- [Content](#content)
+- [Media](#media)
+
+## UX
+
+## Site goals
+
+The aim of the site is to create a space for football fans to test their knowledge of the game and to allow streamer ZedNG another opportunity to be abole to interact with his followers a more engaging way.
+
+## User goals:
+- The user should find the site easily by making sure SEO score is high
+- The user will be able to easily see how to play the game and interact with it easily.
+- the user should have an easy understanding of the games objective on first play.
+
+## Wireframes
 
 The wireframe for the project was done through Adode XD which made the project a lot easier to implement on the HTML and CSS front as it gives accurate sizes and layout. Although the end result deviated slighlty from the Wireframe, this was a personal choice of how I felt it looked through the various screen sizes.
 
 ![Wireframe Desktop](assets/images/wireframe-desktop.png)
 ![Wireframe Mobile](assets/images/wireframe-mobile.png)
+
+## Features 
+
+The quiz is designed with simplicity in mind. The layout is kept very minimal and with an aim at keeping the quiz very accessible for both desktop and mobile users. The structure follows a simple multiple choice structure with a question given and four possible answers, only one of which is correct.
 
 ### Existing Features
 
@@ -48,21 +83,21 @@ The wireframe for the project was done through Adode XD which made the project a
 
 ## Testing 
 
-- __HTML__
+### __HTML__
 
 - The Html of the page is very simplistic and was completed very quickly after developing the wireframe for the site. 
 - The only complicated section of the HTML was upon implemeting some of the attributes to be linked to the JS file, particularly-
     - The question area containing the following line input type="hidden" id="currentQuestion" value="0"/ which allows the js file to identify the current positon of the questions and answers array. I got inspiration for this from the first Youtube video linked in the credits below.
     - And the id="answer-choice-0" onClick="checkAnswer(0)" on the answer buttons so that the answers in the array could be assigned to the individual buttons and have a function when selected. I orignally had an issue with this feature until I had added this to the HTML. I had assumed the JS would automatically assign to the buttons and played with the js file before realising there was nothing present to actually guide the answers to this section.
 
-- __CSS__
+### __CSS__
 
 - The CSS went through normal teething issues with responsive design. I made several adjustments to try avoid removing the logo from the header section on mobile.
 - Flex box was used in most sections to give smoother transitions to screen sizes, particulalry in the answer Divs.
 - One issue I encountered which was not resolved was that similarly to the start button, I originally had the answer buttons highlight when they were hovered over, however the JS function which highlights the buttons red or green for correct and incorrect answers would remove this feature but only on buttons which had been selected. Having looked through the function, having the buttons reset to their original state by looping back through the function of moveToNextQuestion instead of simply updating the color back to black, may solve the issue but due to time, this has not been tested yet.
 
 
-- __JavaScript__
+### __JavaScript__
 
 - The javascript gave me he most issues and a lot of additional study was needed and has been mentioned in the credits section below.
 - The first step was implementing the start quiz function to have the start button remove from the screen and populate the first questions and answers from the questions array.
@@ -89,9 +124,14 @@ The wireframe for the project was done through Adode XD which made the project a
       - Largest function has 10 statements in it, while the median is 6.
       - The most complex function has a cyclomatic complexity value of 2 while the median is 1.
 
-### Unfixed Bugs
+## Unfixed Bugs
 
-Although there are no current bugs, there are additional features I would like to add which have all been outlined in the information above.
+Although there are no current bugs, there are additional features I would like to add which have all been outlined in the information above. An additional issue outlined below is in explicit height and width of the site logo downgrading perfromance despite being given explicit height and width dimensions.
+
+## Performance Testing
+
+The page was tested for performance through lighthouse and the image below shows the results of testing
+![Lighthouse Testing](assets/images/lighthouse_desktop_results.png)
 
 ## Deployment 
 
@@ -99,6 +139,16 @@ Although there are no current bugs, there are additional features I would like t
   - In the GitHub repository, navigate to the Settings tab 
   - From the source section drop-down menu, select the Master Branch
   - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
+
+  To run localy:
+- Log in to GitHub and click on repository to download ([TopTierTrivia](https://github.com/StephenKennyGains/TopTierTrivia))
+- select `Code` and click Download the ZIP file.
+- after download you can extract the file and use it in your local environment 
+
+Alternatively you can [Clone](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+or [Fork](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo)
+this repository ([TopTierTrivia](https://github.com/StephenKennyGains/TopTierTrivia)) into your github account.
+
 
 The live link can be found here - https://stephenkennygains.github.io/TopTierTrivia/
 
