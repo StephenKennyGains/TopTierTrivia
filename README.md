@@ -130,7 +130,7 @@ Although there are no current bugs, there are additional features I would like t
 
 ## Performance Testing
 
-The page was tested for performance through lighthouse and the image below shows the results of testing
+The page was tested for performance through lighthouse and the image below shows the results of testing. Unfortunately the page was marked down in performance due to a lack of explicit width and height dimensions for the logo png. Despite updating the sizing to use explicit dimensions and added to media queries too, the performance issue remained.
 ![Lighthouse Testing](assets/images/lighthouse_desktop_results.png)
 
 ## Deployment 
