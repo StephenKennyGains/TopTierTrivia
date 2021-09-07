@@ -126,7 +126,10 @@ The quiz is designed with simplicity in mind. The layout is kept very minimal an
 
 ## Unfixed Bugs
 
-Although there are no current bugs, there are additional features I would like to add which have all been outlined in the information above. An additional issue outlined below is in explicit height and width of the site logo downgrading perfromance despite being given explicit height and width dimensions.
+- There is currently a bug which is causing the display of the score section to overlap the title and logo section when displaying on a safari browser. This was noticed by my mentor when he was examining the page, however, after adding additional media queries for multiple sizes, the issue will not resolve. I have tested the view at all browser widths on google chrome running on a windows operating system and cannot find this issue to recify it.
+![Safari View Bug](assets/images/safari-view-bug.png)
+
+- An additional issue outlined below is in explicit height and width of the site logo downgrading perfromance despite being given explicit height and width dimensions.
 
 ## Performance Testing
 
