@@ -4,6 +4,8 @@ Top Tier Trivia is a simply designed quiz game that runs through a series of que
 
 The quiz will give you 5 points for every correct answer and will be used by Fifa Twitch streamer, ZedNG, on his channel to test some of his followers knowledge of the game.
 
+For the purposes of project assessment I have kept the quiz short, at 5 questions and written the code so that questions can added or removed at any time.
+
 ![Responsive Mockup](assets/images/responsive_mockup.png)
 
 ## [View live website in github pages](https://stephenkennygains.github.io/TopTierTrivia/)
